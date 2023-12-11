@@ -16,19 +16,7 @@ const handleRejected = (state, action) => {
   state.isLoading = false;
   state.error = action.payload;
 };
-const handleFulfilledAdd = (state, action) => {
-  state.isLoading = false;
-  state.error = null;
-  state.items.push(action.payload);
-};
-const handleFulfilledDelete = (state, action) => {
-  state.isLoading = false;
-  state.error = null;
-  const index = state.items.findIndex(
-    favorite => favorite.id === action.payload
-  );
-  state.items.splice(index, 1);
-};
+
 const advertsSlice = createSlice({
   name: 'adverts',
   initialState: {
